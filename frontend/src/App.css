@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root,
+.App {
+  height: 100%;
+}
+body {
+  background: radial-gradient(100% 100% at 50% 0%, #3D2B52 0%, #2A2442 20.91%, #201F37 100%);
+  color: #fff;
+}
+
+.content {
+  display: grid;
+  justify-content: center;
+  align-content: top;
+
+}
+.form-panel {
+  @apply flex flex-col items-center justify-center bg-gray-900 p-6 shadow-xl;
+  width: 420px;
+  border-radius: 20px;
+  margin-top: 60px;
+}
+.magink-logo {
+  height: 45px;
+  margin-right: 16px;
+}
+form {
+  width: 100%;
+  text-align: center;
+}
+label, input {
+  display: block;
+}
+
+label {
+  @apply text-white font-bold mb-3 ml-0.5 text-left;
+}
+
+input {
+  @apply w-full bg-gray-800 text-white px-4 py-3 mb-2 border rounded-lg border-gray-700 hover:border-gray-500 focus:outline-none  disabled:opacity-50;
+}
+
+.estimations {
+@apply text-xs text-left absolute bottom-5 text-gray-300
+
+}
+.estimations.has-error {
+@apply text-xs text-left absolute bottom-2 text-gray-300
+
+}
+
+a {
+  @apply text-purple-400 hover:text-purple-300;
+}
+
+.wizard{
+  position: absolute;
+  width:300px;
+  left:45%;
+  opacity: 0.5;
+  animation: hovering 4s infinite alternate;
+}
+.wizard-small{
+  width:50px;
+}
+
+@keyframes rise{
+  0%{
+    bottom:-200px;
+  }
+  100%{
+    bottom:1080px;
+  }
+}
+
+@keyframes hovering {
+  0% {
+    transform:translateY(10%);
+  }
+  100% {
+    transform:translateY(20%)
+  }
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.text-info {
+  @apply flex flex-col relative pb-5 ml-32 self-center z-10;
+  max-width: 600px;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+.tag-line {
+  @apply text-gray-400;
+}
+
+.error-message {
+ @apply absolute bottom-4 text-red-500 text-xs
+}
+
+.group {
+  @apply relative pb-7
+}
+.group:last-child {
+  @apply relative pb-2
+}
+
+.ui-event {
+ @apply border-b border-gray-700 pb-2 mb-2
+}
+.ui-event:last-child {
+ @apply border-0
+}
+.submit-outcome {
+  @apply mb-6 text-sm w-full
+}
+.form-panel button.disclosure-button {
+  @apply flex w-full justify-between rounded-lg bg-purple-900 opacity-100 px-4 py-2 text-left text-sm font-medium text-purple-400 hover:bg-purple-800 focus:outline-none focus-visible:ring
+}
+.disclosure-panel {
+  @apply px-4 pt-4 pb-2 text-sm text-gray-500 w-full mb-6;
+}
+.disclosure-button[aria-expanded="false"] {
+  @apply mb-6;
+}
+.user-guide {
+  @apply text-xs text-gray-300 text-left;
+}
